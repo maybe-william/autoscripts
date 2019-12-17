@@ -7,7 +7,7 @@ package { 'puppet-lint':
 }
 
 # Install mysql 5.7
-package { 'mysql-server-5.7': 
+package { 'mysql-server-5.7':
   ensure => present,
 }
 
@@ -42,17 +42,22 @@ nnoremap ;j :update<CR>
 ",
 }
 
-# install python3
-package { 'python3.4':
-  name => 'python3',
+# install git
+package { 'git':
+  name => 'git',
 }
 
+# git cache
+exec { 'git-cache-and-aliases':
+  command => "git config credential.helper \'cache --timeout 99999\'",
+  path    => '/usr/local/bin/:/usr/bin/:/bin/'
+}
 # install shellcheck
 package { 'shellcheck':
   ensure => '0.3.3-1~ubuntu14.04.1',
 }
 
-# install git
-package { 'git':
-  name => 'git',
+# install python3
+package { 'python3.4':
+  name => 'python3',
 }
