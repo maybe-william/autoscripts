@@ -1,4 +1,39 @@
 # Configure a new ubuntu14.04 container with necessary tools and configuration
+include stdlib
+
+# Add file lines to bashrc
+file_line { 'gs' :
+  path => '/root/.bashrc',
+  line => 'alias gs="git status"'
+}
+file_line { 'ga' :
+  path => '/root/.bashrc',
+  line => 'alias ga="git add"'
+}
+file_line { 'gc' :
+  path => '/root/.bashrc',
+  line => 'alias gc="git commit -m"'
+}
+file_line { 'in' :
+  path => '/root/.bashrc',
+  line => "alias in='\"[init] Do first try\"'"
+}
+file_line { 'gp' :
+  path => '/root/.bashrc',
+  line => 'alias gp="git push"'
+}
+file_line { 'git name' :
+  path => '/root/.bashrc',
+  line => 'git config user.name --global "will"'
+}
+file_line { 'git email' :
+  path => '/root/.bashrc',
+  line => 'git config user.email --global "818@holbertonschool.com"'
+}
+file_line { 'credential cache' :
+  path => '/root/.bashrc',
+  line => "git config credential.helper 'cache --timeout=99999'"
+}
 
 # Install puppet-lint
 package { 'puppet-lint':
