@@ -14,21 +14,17 @@ file_line { 'gc' :
   path => '/root/.bashrc',
   line => 'alias gc="git commit -m"'
 }
-file_line { 'in' :
-  path => '/root/.bashrc',
-  line => "alias in='\"[init] Do first try\"'"
-}
 file_line { 'gp' :
   path => '/root/.bashrc',
   line => 'alias gp="git push"'
 }
 file_line { 'git name' :
   path => '/root/.bashrc',
-  line => 'git config user.name --global "will"'
+  line => 'git config user.name "will"'
 }
 file_line { 'git email' :
   path => '/root/.bashrc',
-  line => 'git config user.email --global "818@holbertonschool.com"'
+  line => 'git config user.email "818@holbertonschool.com"'
 }
 file_line { 'credential cache' :
   path => '/root/.bashrc',
