@@ -42,6 +42,11 @@ package { 'mysql-server-5.7':
   ensure => present,
 }
 
+# Install flask
+package { 'python3-flask':
+  ensure => present,
+}
+
 # Configure vim !!! -- assumes home folder as /root
 file { 'vim-config':
   ensure  => present,
@@ -85,7 +90,7 @@ exec { 'git-cache-and-aliases':
 }
 # install shellcheck
 package { 'shellcheck':
-  ensure => '0.3.3-1~ubuntu14.04.1',
+  ensure => present,
 }
 
 # install python3
